@@ -1,1 +1,1 @@
-# verbose-succotash
+# Etch-a-sketch
