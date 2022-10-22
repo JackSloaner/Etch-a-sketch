@@ -1,0 +1,21 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.grid {
+    width: 720px;
+    height: 720px;
+    border-top: 1px solid black;
+    border-right: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(16, 1fr);
+}
+.box{
+    height: 1fr;
+    display:flex;
+    border-left: 1px solid black;
+    border-bottom: 1px solid black;
+    justify-content: center;
+    align-items: center;
+}
