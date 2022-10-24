@@ -6,11 +6,6 @@ newGridBtn.addEventListener('click', getGridDimensions);
 
 const container = document.querySelector('.grid');
 
-let hovercolor = 'grey';
-
-document.addEventListener('mousedown', () => {hovercolor = 'white';});
-document.addEventListener('mouseup', () => {hovercolor = 'grey'});
-
 
 function makeGrid(length){
 container.style.gridTemplateColumns = `repeat(${length}, 1fr)`;
@@ -33,7 +28,7 @@ function removeGrid(){
 
 function changeColor(e){
     const box = e.target;
-    box.style.backgroundColor = hovercolor;
+    box.style.backgroundColor = `rgb(${randomRGB()}, ${randomRGB()}, ${randomRGB()})`;
 }
 
 function getGridDimensions(){
@@ -51,6 +46,11 @@ function clearGrid() {
     allBoxes.forEach(box => {
         box.style.backgroundColor = 'white';
     });
+}
+
+function randomRGB() {
+    const RGBVal = Math.floor(Math.random() * 256);
+    return RGBVal
 }
 
 makeGrid(16);
