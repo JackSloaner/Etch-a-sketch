@@ -6,11 +6,7 @@ newGridBtn.addEventListener('click', getGridDimensions);
 
 const container = document.querySelector('.grid');
 
-let hovercolor = 'grey';
-
-document.addEventListener('mousedown', () => {hovercolor = 'white';});
-document.addEventListener('mouseup', () => {hovercolor = 'grey'});
-
+let blackPercentage = 0.1;
 
 function makeGrid(length){
 container.style.gridTemplateColumns = `repeat(${length}, 1fr)`;
@@ -33,7 +29,8 @@ function removeGrid(){
 
 function changeColor(e){
     const box = e.target;
-    box.style.backgroundColor = hovercolor;
+    box.style.backgroundColor = `rgba(0, 0, 0, ${blackPercentage})`;
+    (blackPercentage < 1) ? blackPercentage += .1 : blackPercentage = .1;
 }
 
 function getGridDimensions(){
@@ -51,6 +48,7 @@ function clearGrid() {
     allBoxes.forEach(box => {
         box.style.backgroundColor = 'white';
     });
+    blackPercentage = 0.1;
 }
 
 makeGrid(16);
